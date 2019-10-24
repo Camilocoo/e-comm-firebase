@@ -52,6 +52,7 @@ export default class Directory  extends Component {
                             <MenuItem
                              title={title}
                              key={id}
+                             imageUrl={imageUrl}
                              
                              />
                         )
