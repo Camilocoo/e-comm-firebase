@@ -47,13 +47,13 @@ export default class Directory  extends Component {
         return (
             <div>
                 <div className="directory-menu">
-                    {data.map(({title,imageUrl,id})=>{
+                    {data.map(({title,imageUrl,id,size})=>{
                         return(
                             <MenuItem
                              title={title}
                              key={id}
                              imageUrl={imageUrl}
-                             
+                             size={size}
                              />
                         )
                     })}
