@@ -25,10 +25,26 @@ export default class App extends Component {
 
 
   componentDidMount(){
-   this.unsubscribeFromAuth = auth.onAuthStateChanged(user=>{
-      createUserProfileDocument(user);
-      console.log(`user: `,user)
-    })
+   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth =>{
+      if(userAuth){
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot=>{
+          this.setState({
+            currentUser:{
+              id: snapShot.id,
+              ...snapShot.data()  
+            }
+          },()=>{
+            console.log(`state: `,this.state)
+          });
+        });
+       
+      }
+      this.setState({
+        currentUser:null
+      })
+    });
   }
   componentWillUnmount(){
     this.unsubscribeFromAuth()
