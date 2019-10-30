@@ -35,15 +35,15 @@ export default class App extends Component {
               id: snapShot.id,
               ...snapShot.data()  
             }
-          },()=>{
-            console.log(`state: `,this.state)
           });
+          console.log(`steteee`,this.state);
+         
         });
        
       }
       this.setState({
-        currentUser:null
-      })
+        currentUser:userAuth
+      });
     });
   }
   componentWillUnmount(){
