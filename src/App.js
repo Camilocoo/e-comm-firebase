@@ -6,7 +6,7 @@ import {Switch, Route} from 'react-router-dom'
 import './App.css';
 import Header from '../src/components/header/header.component'
 import SignInAndSignUpPage from './pages/sign-in-and-out/sign-in-and-out.component'
-import {auth} from './firebase/firebase.utils'
+import {auth, createUserProfileDocument} from './firebase/firebase.utils'
 
 const HatsPage =()=>(
     <div>
@@ -26,7 +26,7 @@ export default class App extends Component {
 
   componentDidMount(){
    this.unsubscribeFromAuth = auth.onAuthStateChanged(user=>{
-      this.setState({currentUser:user});
+      createUserProfileDocument(user);
       console.log(`user: `,user)
     })
   }
