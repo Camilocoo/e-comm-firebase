@@ -8,7 +8,7 @@ import Header from '../src/components/header/header.component'
 import SignInAndSignUpPage from './pages/sign-in-and-out/sign-in-and-out.component'
 import {auth, createUserProfileDocument} from './firebase/firebase.utils'
 import {connect} from 'react-redux'
-import {setCurrentUser} from './redux/user/use.actions';
+import {setCurrentUser} from './redux/user/user.actions';
 
 const HatsPage =()=>(
     <div>
