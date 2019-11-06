@@ -17,8 +17,21 @@
     width:80%;
     opacity: 0.7;
     position:absolute;
-    top:255px; 
+    top:255px;
+    display: none;
+    text-align: center;
+   
 
+
+  }
+  &:hover{
+    .image{
+      opacity: 0.8;
+    }
+    .custom-button{
+      opacity: 0.85;
+      display: flex;
+    }
   }
 
   .collection-footer {
